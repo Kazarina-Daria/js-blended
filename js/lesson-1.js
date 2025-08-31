@@ -64,7 +64,7 @@ console.log (min); */
 // "Вибачте, але ви маєте ввести значення від 1 до 4 включно".
 // Значення змінної result виведіть в консоль.
 
-let num = prompt("Enter a number (1–4):");
+/* let num = prompt("Enter a number (1–4):");
 switch (num) {
     case '1':
         console.log ("winter");
