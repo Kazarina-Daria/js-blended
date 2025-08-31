@@ -24,9 +24,6 @@ for (let salaries of value) {
 return totalSalary; 
 }*/
 
-
-
-
 //Task 2
 /* Массив содержит коллекцию цветов. Каждый цвет представлен в виде объекта со свойствами и , содержащими соответствующие значения для каждого формата и цвета.colorshexrgb
 
@@ -53,8 +50,6 @@ for( const color of colors){
   rgbColors.push(color.rgb);
 }*/
 
-
-
 /* Task 3
 Дізнаємося середній рейтинг усієї нашої колекції. Для цього треба скласти всі рейтинги й розділити отримане значення на кількість книг.
 
@@ -72,7 +67,6 @@ for (const book of books) {
 
 const averageRating = totalRating / books.length;
 console.log(averageRating); // 8*/
-
 
 /* Task 4 
 /* Функция принимает единственный параметр — название товара. Функция содержит массив объектов со свойствами — название товара, — цена и — количество.getProductPrice(productName)productNameproductsnamepricequantity
@@ -101,8 +95,6 @@ function getProductPrice(productName) {
   }
    return null;  
 }*/
-
-
 
 //Task 5
 /* const friends = [
@@ -141,14 +133,6 @@ for( const item of arr) {
 return onlineFriends;
 }*/
 
-
-
-
-
-
-
-
-
 //Task 6
 /* Напишите функцию, которая принимает один параметр — имя (ключ) свойства. Функция должна возвращать массив всех значений свойств с этим именем от каждого объекта в массиве. Если в объектах нет свойств с таким именем, функция должна вернуть пустой массив.getAllPropValues(propName)propNameproducts
 
@@ -175,12 +159,6 @@ function getAllPropValues(propName) {
    return values;
 }*/
 
-
-
-
-
-
-
 //Task 7
 
 /* const stones = [
@@ -199,10 +177,6 @@ function calcTotalPrice( stones, stoneName){
    }
    return sum;
 }*/
-
-
-
-
 
 //Task 8
 /* Объект обладает следующими свойствами:atTheOldToad
@@ -235,7 +209,6 @@ const atTheOldToad = {
   },
 };*/
 
-
 //Task 9
 // Створіть масив styles з елементами 'jazz' і 'blues'
 // Додайте до кінця масиву елемент 'rock-n-roll' за допомогою відповідного методу масивів
@@ -262,13 +235,6 @@ console.log(`${i + 1} - ${ array[i]}`);
 }
 logItems(styles);*/
 
-
-
-
-
-
-
-
 //Task 10
 // Напишіть функцію checkLogin(array), яка:
 // Приймає масив логінів як аргумент.
@@ -289,21 +255,142 @@ alert ("User not found");
 
 checkLogin(logins);*/
 
-
 // Task 11
 // Напишіть функцію caclculateAverage(),
 // яка приймає довільну кількість
 // аргументів і повертає їхнє середнє значення.
 // Додайте перевірку, що аргументи - це числа.
-
-function caclculateAverage(... args){
-let sum = 0;
-let count = 0;
-for ( const value of args){
-  if( typeof value === "number"){
- sum += value;
- count ++
+/*
+function calculateAverage(...args) {
+  let sum = 0;
+  let count = 0;
+  for (const value of args) {
+    if (typeof value === "number") {
+      sum += value;
+      count++;
+    }
   }
+  return sum / count;
 }
-return sum / count;
+
+console.log(calculateAverage(20, 30, 100));*/
+
+
+
+//Task 12
+// Напишіть функцію, яка сумуватиме сусідні числа 
+// і пушитиме їх в новий масив.
+
+// const someArr = [22, 11, 34, 5, 12, 13, 14, 15];
+
+// уточнення: складати необхідно перше число з другим, потім друге - з третім, 
+// третє - з четвертим і так до кінця.
+// В результаті функція має повертати масив [33, 45, 39, 17, 25, 27, 29].
+
+
+function sumNummbers(arr){
+const total = [];
+for(let i = 0; i < arr.length - 1; i++ ){
+total.push(arr[i] + arr[i + 1]);
 }
+return total;
+}
+const someArr = [22, 11, 34, 5, 12, 13, 14, 15];
+console.log( sumNummbers(someArr));
+
+
+// Task 13
+// Напишіть скрипт, який для об'єкту user, послідовно:
+// 1 - додасть поле mood зі значенням 'happy',
+// 2 - замінить hobby на 'skydiving',
+// 3 - замінить значення premium на false,
+// 4 - виведе зміст об'єкта user у форматі
+// '<ключ>:<значення>' використовуя Object.keys() та for...of
+
+const user = {
+     name: "John",
+    age: 20,
+    hobby: "tenis",
+   premium: true,
+   };
+
+
+   user.mood = 'happy';
+   user.hobby = 'skydiving';
+   user.premium = false;
+   const  userKeys = Object.keys(user);
+   for (const key of userKeys);{
+    console.log ('${key}: ${user[key]}');
+   }
+
+
+
+
+// Є об'єкт, в якому зберігаються зарплати команди
+// Напишіть код для додавання усіх зарплат та
+// збережіть його результат в змінній sum.
+// Якщо об'єкт salaries пустий, то результат має бути 0
+
+ const salaries = {
+    Mango: 100,
+    Poly: 160,
+     Ajax: 1470,
+   };
+
+const keys = Object.values(salaries);
+let sum = 0;
+for( const salary of keys ){
+
+  sum += salary;
+}
+
+console.log(sum);
+
+
+
+
+
+
+
+// Створіть об'єкт calculator з наступними методами:
+// read(a, b) - приймає два аргумента і зберігає їх як властивості об'єкта,
+// sum() - повертає сумму збереженних значень (з перевіркою на наявність властивостей в об'єкті),
+// mult() - перемножає збереженні значення і повертає результат (з перевіркою на наявність властивостей в об'єкті),
+// винесіть перевірку на наявність властивостей в об'єкті в окремий метод exist().
+
+// Якщо вказані властивості в обʼєкті відсутні (тобто метод exist повертає false),
+// методи sum і mult мають повертати рядок 'No such propeties'
+
+const calculator = {
+
+
+
+read(a, b) {
+this.a = a;
+this.b = b;
+},
+
+exist() {
+return this.a !== undefined && this.b !== undefined;
+},
+
+
+sum(){
+  if(!this.exist()){
+return "No such propeties";
+}
+  return this.a + this.b ;
+
+},
+
+mult(){
+if(!this.exist()){
+return "No such propeties";
+}
+   return  this.a * this.b ;
+}
+};
+
+
+ calculator.read(3, 5);
+console.log(calculator.sum());
