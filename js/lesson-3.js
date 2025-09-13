@@ -1,4 +1,4 @@
-console.log(Lesson3);
+
 // Task 1
 //Функция принимает один параметр — массив чисел, и вычисляет общую сумму его элементов, которая хранится в переменной и возвращается в результате работы функции.calculateTotalPrice(orderedItems)orderedItemstotalPrice
 

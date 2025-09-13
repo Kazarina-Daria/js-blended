@@ -1,5 +1,3 @@
-console.log(Lesson2);
-
 
 /* Task 1
 Функция принимает в качестве параметра объект окладов (). Каждое свойство объекта является ключом, содержащим имя сотрудника, а его значением является соответствующая ему зарплата.countTotalSalary(salaries)salariessalaries
@@ -12,20 +10,22 @@ console.log(Lesson2);
 В результате вернемся.totalSalary
 Функция объявлена.countTotalSalary(salaries)
 Вызов возвращается.countTotalSalary({})0
-Вызов возвращается.countTotalSalary({ mango: 100, poly: 150, alfred: 80 })330
-Вызов возвращается.countTotalSalary({ kiwi: 200, poly: 50, ajax: 150 })400
+Вызов возвращается.countTotalSalary(80 })330
+Вызов возвращается.countTotalSalary({ kiwi: 200, poly: 50, ajax: 150{ mango: 100, poly: 150, alfred:  })400*/
 
 
 function countTotalSalary(salaries) {
   
   let totalSalary = 0;
-  const value = Object.values(salaries);
+  const value = Object.values(salaries);// получаем массив зарплат
 
 for (let salaries of value) {
   totalSalary += salaries;
 }
 return totalSalary; 
-}*/
+}
+console.log(countTotalSalary({})); //0
+console.log(countTotalSalary({ mango: 100, poly: 150, alfred: 80 }));//330
 
 //Task 2
 /* Массив содержит коллекцию цветов. Каждый цвет представлен в виде объекта со свойствами и , содержащими соответствующие значения для каждого формата и цвета.colorshexrgb
@@ -38,7 +38,7 @@ return totalSalary;
 Значением переменной является массив .hexColors["#f44336", "#2196f3", "#4caf50", "#ffeb3b"]
 Объявляется переменная.rgbColors
 Значением переменной является массив .rgbColors["244,67,54", "33,150,243", "76,175,80", "255,235,59"]
-
+*/
 const colors = [
   { hex: "#f44336", rgb: "244,67,54" },
   { hex: "#2196f3", rgb: "33,150,243" },
@@ -51,11 +51,15 @@ const rgbColors = [];
 for( const color of colors){
    hexColors.push(color.hex);
   rgbColors.push(color.rgb);
-}*/
+}
+console.log(hexColors);
+console.log(rgbColors);
+
+
 
 /* Task 3
 Дізнаємося середній рейтинг усієї нашої колекції. Для цього треба скласти всі рейтинги й розділити отримане значення на кількість книг.
-
+*/
 const books = [
   { title: "The Last Kingdom", author: "Bernard Cornwell", rating: 8.2 },
   { title: "Beside Still Waters", author: "Robert Sheckley", rating: 9 },
@@ -69,7 +73,7 @@ for (const book of books) {
 }
 
 const averageRating = totalRating / books.length;
-console.log(averageRating); // 8*/
+console.log(averageRating); // 8
 
 /* Task 4 
 /* Функция принимает единственный параметр — название товара. Функция содержит массив объектов со свойствами — название товара, — цена и — количество.getProductPrice(productName)productNameproductsnamepricequantity
@@ -246,17 +250,17 @@ logItems(styles);
 // Якщо ім'я є в масиві  виводить повідомлення через alert: "Welcome, <name>!"
 // Якщо ім'я відсутнє  виводить повідомлення: "User not found".
 
-/*const logins = ["Peter", "John", "Igor", "Sasha"];
+const logins = ["Peter", "John", "Igor", "Sasha"];
 function checkLogin(array){
-  let question = promt( "What's your name?");
+  let question = prompt( "What's your name?");
   if (array.indexOf(question) !== -1){
-alert: ("Welcome, ${question}");
+alert(`Welcome, ${question}`);
 } else {
 alert ("User not found");
 }
   }
 
-checkLogin(logins);*/
+checkLogin(logins);
 
 // Task 11
 // Напишіть функцію caclculateAverage(),
