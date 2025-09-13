@@ -1,3 +1,6 @@
+console.log(Lesson2);
+
+
 /* Task 1
 Функция принимает в качестве параметра объект окладов (). Каждое свойство объекта является ключом, содержащим имя сотрудника, а его значением является соответствующая ему зарплата.countTotalSalary(salaries)salariessalaries
 
@@ -78,7 +81,7 @@ console.log(averageRating); // 8*/
 Вызов возвращает .getProductPrice(‘Grip’)1200
 Модель 2700'.getProductPrice(‘Scanner’) call returns
 Вызов возвращается.getProductPrice(‘Droid’)400
-Вызов возвращается.getProductPrice(‘Engine’)null
+Вызов возвращается.getProductPrice(‘Engine’)null*/
 
 function getProductPrice(productName) {
   const products = [
@@ -94,10 +97,10 @@ function getProductPrice(productName) {
     }
   }
    return null;  
-}*/
+}
 
 //Task 5
-/* const friends = [
+ const friends = [
     { name: "Ross", online: false },
     { name: "Joey", online: true },
     { name: "Chandler", online: false },
@@ -131,7 +134,7 @@ for( const item of arr) {
   }
 }
 return onlineFriends;
-}*/
+}
 
 //Task 6
 /* Напишите функцию, которая принимает один параметр — имя (ключ) свойства. Функция должна возвращать массив всех значений свойств с этим именем от каждого объекта в массиве. Если в объектах нет свойств с таким именем, функция должна вернуть пустой массив.getAllPropValues(propName)propNameproducts
@@ -140,7 +143,7 @@ return onlineFriends;
 Вызов возвращается.getAllPropValues("name")["Radar", "Scanner", "Droid", "Grip"]
 Вызов возвращается.getAllPropValues("quantity")[4, 3, 7, 9]
 Вызов возвращается.getAllPropValues("price")[1300, 2700, 400, 1200]
-Вызов возвращается.getAllPropValues("category")[]
+Вызов возвращается.getAllPropValues("category")[]*/
 
 
 function getAllPropValues(propName) {
@@ -157,11 +160,11 @@ function getAllPropValues(propName) {
     }
   }
    return values;
-}*/
+}
 
 //Task 7
 
-/* const stones = [
+const stones = [
     { name: "Смарагд", price: 1300, quantity: 4 },
     { name: "Діамант", price: 2700, quantity: 3 },
     { name: "Сапфір", price: 400, quantity: 7 },
@@ -176,7 +179,7 @@ function calcTotalPrice( stones, stoneName){
     }
    }
    return sum;
-}*/
+}
 
 //Task 8
 /* Объект обладает следующими свойствами:atTheOldToad
@@ -191,7 +194,7 @@ updatePotionName() — метод, принимающий два строков�
 Значением свойства является массив.atTheOldToad.potions
 Значение свойства — это метод объекта.atTheOldToad.updatePotionName
 После первого вызова метода свойство будет содержать массив .atTheOldToad.updatePotionName("Stone skin", "Invisibility")potions[{ name: "Speed potion", price: 460 }, { name: "Invisibility", price: 520 }]
-
+*/
 const atTheOldToad = {
   potions: [
     { name: "Speed potion", price: 460 },
@@ -207,7 +210,7 @@ const atTheOldToad = {
       }
     }
   },
-};*/
+};
 
 //Task 9
 // Створіть масив styles з елементами 'jazz' і 'blues'
@@ -220,7 +223,7 @@ const atTheOldToad = {
 // Використайте цикл for для перебору елементів масиву.
 // Нумерація елементів повинна починатися з 1 (а не з 0).
 
-/*const styles=['jazz', 'blues'];
+const styles=['jazz', 'blues'];
 styles.push('rock-n-roll');
 const index = styles.indexOf('blues');
 if( index !== -1){
@@ -228,12 +231,12 @@ if( index !== -1){
 }
 
 function logItems(array) {
-  for( let i = 0, i <= array.length, i++){
+  for( let i = 0; i <= array.length; i++){
 console.log(`${i + 1} - ${ array[i]}`);
 
   }
 }
-logItems(styles);*/
+logItems(styles);
 
 //Task 10
 // Напишіть функцію checkLogin(array), яка:
@@ -260,7 +263,7 @@ checkLogin(logins);*/
 // яка приймає довільну кількість
 // аргументів і повертає їхнє середнє значення.
 // Додайте перевірку, що аргументи - це числа.
-/*
+/**/
 function calculateAverage(...args) {
   let sum = 0;
   let count = 0;
@@ -273,7 +276,7 @@ function calculateAverage(...args) {
   return sum / count;
 }
 
-console.log(calculateAverage(20, 30, 100));*/
+console.log(calculateAverage(20, 30, 100));
 
 
 
