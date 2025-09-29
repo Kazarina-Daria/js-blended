@@ -88,8 +88,7 @@ list.innerHTML = " ";
 // Непарні числа - жовтий фон (додати клас odd).
 
 const randomNumber = () => Math.floor(Math.random() * 100) + 1;
-const div = document.createElement("div");
-div.classList.add("number-container");
+const div = document.querySelector(".number-container");
 
 for( let i = 0; i < 100; i++){
   const block = document.createElement("div");
@@ -106,26 +105,114 @@ block.style.backgroundColor = "yellow";
     div.append(block);
 };
 
+// Form Events, Input, Focus, Blur and Submit.
+
+// 1 - При події `input`, якщо користувач ввів в поле більше 
+// 6 символів то додати клас `success`. Якщо ж символів менше аніж 6,
+// то клас `error`
+const form = document.querySelector(".js-contact-form");
+const usernameInput = form.elements.userName;
+const spanOutput = form.querySelector(".js-username-output");
+
+usernameInput.addEventListener("input", (e) => {
+  const value = e.target.value.trim();
+if (usernameInput.value.length < 6  ){
+
+usernameInput.classList.add("error");
+usernameInput.classList.remove("success");
+
+}else{
+usernameInput.classList.add("success");
+usernameInput.classList.remove("error");
+
+}
+
+spanOutput.textContent = value === "" ? "Anonimus" : value ;
+});
 
 
-//4
-// formEl.addEventListener("submit", (e) => {
-//   e.preventDefault();
 
-//   //   const inputValue = e.target.elements.userName.value.trim();
-//   const { userName, accept } = e.target.elements;
-//   const inputValue = userName.value.trim();
 
-//   if (inputValue === "") {
-//     alert("Input can not be empty");
-//     return;
-//   }
+// 2 - При події `focus` зроби перевірку на пустоту поля інпута,
+// якщо ж поле пусте, то зроби `outline` => `'3px solid red'`,
+// якщо при фокусі поле непусте, то `outline` => `'3px solid green'`
 
-//   if (!accept.checked) {
-//     alert("Check!!!");
-//     return;
-//   }
+usernameInput.addEventListener("focus", (e) =>{
+  if(usernameInput.value.trim() === ""){
+usernameInput.style.outline = '3px solid red';
+  }else{
+usernameInput.style.outline = '3px solid green';
+  }
+}
+);
 
-//   console.log({ userName: inputValue });
-//   e.target.reset();
-// });
+// 3 - При події `blur` зроби перевірку на пустоту поля інпута,
+// якщо ж поле пусте, то зроби `outline` => `'3px solid red'`, 
+// якщо при фокусі поле непусте, то `outline` => `'3px solid lime'`
+usernameInput.addEventListener("blur", (e) =>{
+if(usernameInput.value.trim () === ""){
+usernameInput.style.outline = '3px solid red';
+  }else{
+usernameInput.style.outline = '3px solid lime';
+  }
+}
+);
+
+// 4 - При події `submit`. Відміни поведінку браузера по змовчуванню.
+// Дістань данні з інпуту і чек боксу, зроби перевірку, 
+// що інпут не порожній, також, що нажатий чек бокс у положення true,
+// якщо користувач все виконав вірно, збери данні (userName)
+// у обьект і виведи у консоль. У разі, якщо користувач не виконав
+// одну із умов, виведи повідомлення. Також при події інпут реалізуй додавання 
+// ім`я користувача у span, замість слова "Anonymous".
+// Якщо користувач ввів ім`я, а потім видалив, зроби так,
+// щоб на місце повернулось дефолтне знаяення "Anonymous".
+// При відправці форми, очисти інпут, верни чек бокс у положення 
+// false, верни дефолтне значення "Anonymous" у span.
+
+ 
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+const inputValue = e.target.elements.userName.value.trim();
+
+  const { userName, accept } = e.target.elements;
+
+  if (inputValue === "") {
+    alert("Input can not be empty");
+    return;
+  }
+
+  if (!accept.checked) {
+    alert("Check!!!");
+    return;
+  }
+
+  console.log({ userName: inputValue });
+  e.target.reset();
+});
+
+
+// Використовуй шаблон розмітки з файлу html та напиши наступний функціонал:
+// // При кліку на кнопку "Зменшити" квадрат стає меньшим на 20 пікселів,
+// При кліку на кнопку "Збільшити" - квадрат стає більшим на 20 пікселів.
+
+const box = document.querySelector(".box");
+const decreaseButton = document.querySelector(".js-decrease");
+const increaseButton = document.querySelector(".js-increase");
+
+decreaseButton.addEventListener("click", handleDecrease);
+function handleDecrease (){
+  const newSize = box.offsetWidth - 20 ;
+  if( newSize > 0){
+    box.style.width = newSize + "px";
+     box.style.height = newSize + "px";
+  }
+};
+increaseButton.addEventListener("click", handleInc);
+function handleInc (){
+  const newSize = box.offsetWidth + 20 ;
+    box.style.width = newSize + "px";
+     box.style.height = newSize + "px";
+  }
+
